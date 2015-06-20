@@ -1,5 +1,5 @@
 bl_info = {
-    "name": "pin button",
+    "name": "pin-button",
     "author": "Nicolas Priniotakis (Nikos)",
     "version": (0,0,0,1),
     "blender": (2, 7, 4, 0),
@@ -13,9 +13,6 @@ bl_info = {
 
 
 import bpy
-
-global obj, pinned
-pinned = False
 
 def main(context):
     clean = False
