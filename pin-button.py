@@ -54,9 +54,11 @@ def main(context):
             obj.keyframe_insert(data_path = 'scale', frame = frame)
 
     for obj in bpy.context.scene.objects:
-        if obj['pinned'] == True:
-            clean = False
-            pass
+        try:
+            if obj['pinned'] == True:
+                clean = False
+                pass
+        except: pass
             
     if clean :
         original_type = bpy.context.area.type
