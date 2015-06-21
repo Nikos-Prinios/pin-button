@@ -1,5 +1,5 @@
 bl_info = {
-    "name": "pin-button",
+    "name": "pin button",
     "author": "Nicolas Priniotakis (Nikos)",
     "version": (0,0,0,1),
     "blender": (2, 7, 4, 0),
@@ -13,6 +13,9 @@ bl_info = {
 
 
 import bpy
+
+global obj, pinned
+pinned = False
 
 def main(context):
     clean = False
@@ -49,6 +52,12 @@ def main(context):
             obj.keyframe_insert(data_path = 'location', frame = frame)
             obj.keyframe_insert(data_path = 'rotation_euler', frame = frame)
             obj.keyframe_insert(data_path = 'scale', frame = frame)
+
+    for obj in bpy.context.scene.objects:
+        if obj['pinned'] == True:
+            clean = False
+            pass
+            
     if clean :
         original_type = bpy.context.area.type
         bpy.context.area.type = "DOPESHEET_EDITOR"      
