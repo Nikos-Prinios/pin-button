@@ -24,7 +24,7 @@ def pos_marker(frame,marker):
         if m.name == marker:
             m.frame = frame
             return
-
+@persistent
 def update_marker(self):
     print('change')
     if bpy.context.scene.pin == True:
